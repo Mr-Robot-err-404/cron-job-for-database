@@ -1,0 +1,31 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Creator {
+  id           String    @id 
+  title        String
+  createdAt    DateTime  @default(now())
+  updatedAt    DateTime  @updatedAt
+  subs         Json
+  views        Json
+  weeklyViews  Json?
+  monthlyViews Json?
+  yearlyViews  Json?
+  videoNum     Json
+  recentVid    String?
+  popularVid   String?
+  rank         Json
+  picture      String?
+  category     Int?
+}
+

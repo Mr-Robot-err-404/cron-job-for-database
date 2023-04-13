@@ -20,6 +20,3 @@ async function main() {
     await updatePopularVid(gameSubOrder, "gamedev")
     return
 }
-
-main()
-
